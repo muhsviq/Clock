@@ -1,0 +1,182 @@
+
+#txt{
+	position: absolute;
+	left: 40%;
+	top: 70%;
+	color: #00a3db;
+	font-size: 40px;
+	font-weight: bold;
+	
+
+
+}
+
+body{
+  background:black;
+  padding: 10%;
+}
+
+#container{
+	height: 300px;
+	width: 300px;
+  position: relative;
+  margin:auto;
+	border-radius: 100%;
+	border: 10px solid #00a3db;
+	box-shadow: 0px 15px 40px;
+}
+/*#container2{
+	height: 280px;
+	width: 280px;
+  position: absolute;
+  margin:auto;
+
+	border-radius: 100%;
+	border: 9px dotted #00a3db;
+	box-shadow: 0px 15px 40px;
+}*/
+
+#hour{
+  width:8px;
+  height:70px;
+  background-color:#00a3db;
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  transform-origin: top center;
+}
+
+#minute{
+  width:6px;
+  height:80px;
+  background-color: #00a3db;;
+ 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  transform-origin: top center;
+
+}
+
+#second{
+  transform-origin: top center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+
+
+}				var secondDiv = document.getElementById('second'); 		 	// the div represents the second hand
+				var minuteDiv = document.getElementById('minute'); 		 // the div represents the minute hand
+				var hourDiv = document.getElementById('hour');		  	// the div represents the hour hand
+
+
+
+     function clock(){
+
+			 var date=new Date();						    	// date function
+			 var second=date.getSeconds();	     // seconds of current date
+			 var minute=date.getMinutes();		  // minutes of current date
+			 var hour=date.getHours();			 	 // hours of current date
+
+        secondDiv.style.transform="rotate("+(second+90)*6 +"deg)";   // function that rotates the second hand
+        minuteDiv.style.transform="rotate("+(minute+90)*6+"deg)";		// function that rotates the minute hand
+        hourDiv.style.transform="rotate("+(hour+90)*30+"deg)";     // function that rotates the hour hand
+
+     };
+
+       setInterval(clock,1000); 					// function repeats firing every second
+
+#circle{
+  width:15px;
+  height:15px;
+  background-color: #00a3db;
+  border-radius:100%;
+  box-shadow: 1px 1px 3px #00a3db;;
+  position: absolute;
+  z-index: 1;
+  top: -7.5px;
+  left: -7.5px;
+}
+
+#stickPart{
+	width: 5px;
+	height: 110px;
+	background: #00a3db;
+
+	position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+	border-radius: 2px;
+}
+
+
+#daire{
+	width: 20px;
+	height: 20px;
+	background: #00a3db;
+	
+	position: absolute;
+  left: 48%;
+  
+  bottom: 46%;
+	border-radius: 100%;
+}
+
+#hour12{
+	width: 6px;
+	height: 20px;
+	border: 1px;
+	border-radius: 40%;
+	background: #00a3db;
+	
+	position: absolute;
+  left: 50%;
+	top: 10px;
+	
+}
+
+#hour3{
+	width: 20px;
+	height: 1px;
+	border: 2px solid #00a3db;
+	color: #00a3db;
+	font-size: 28px;
+	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+	text-shadow: 0px -2px 2px black;
+}
+#hour6{
+	width: 1px;
+	height: 20px;
+	border: 2px solid #00a3db;
+	color: #00a3db;
+	font-size: 28px;
+	position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+	bottom: 10px;
+	text-shadow: 0px -2px 2px black;
+}
+#hour9{
+	width: 20px;
+	height: 1px;
+	border: 2px solid #00a3db;	
+	color: #00a3db;
+	font-size: 28px;
+	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+	text-shadow: 0px -2px 2px black;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body onload="startTime() " >
+<div id="container" >
+<div id="container2">
+	
+<
+ <div id="hour12"></div>
+ <div id="txt"></div>
+
+ <div id="gun"></div>
+  		<div id="hour3"></div>
+  		<div id="hour6">	</div>
+  		<div id="hour9"></div>
+
+  			<div id="minute"></div>
+  			<div id="hour"></div>
+  			<div id= "daire"></div>
+  			<div id="second">
+
+  					<div id="circle"></div>
+  					<div id="stickPart"></div>
+  					
+
+  			</div>
+
+</div>
+</div>
+	<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m ;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+function gun() {
+    var d = new Date();
+    var n = d.getDate();
+    document.getElementById("gun").innerHTML = n;
+
+}
+
+
+       var secondDiv = document.getElementById('second');      // the div represents the second hand
+        var minuteDiv = document.getElementById('minute');     // the div represents the minute hand
+        var hourDiv = document.getElementById('hour');        // the div represents the hour hand
+
+
+
+     function clock(){
+
+       var date=new Date();                 // date function
+       var second=date.getSeconds();       // seconds of current date
+       var minute=date.getMinutes();      // minutes of current date
+       var hour=date.getHours();         // hours of current date
+
+        secondDiv.style.transform="rotate("+(second+90)*6 +"deg)";   // function that rotates the second hand
+        minuteDiv.style.transform="rotate("+(minute+90)*6+"deg)";   // function that rotates the minute hand
+        hourDiv.style.transform="rotate("+(hour+90)*30+"deg)";     // function that rotates the hour hand
+
+     };
+
+       setInterval(clock,1000);           // function repeats firing every second
+
+</script>
+
+</body>
+</html>
